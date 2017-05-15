@@ -1,4 +1,23 @@
+# Setup:
+
+`bundle install`
+
+`rails db:create`
+
+`rails db:migrate`
+
+`rails db:seed`
+
+# AactionCable Added:
+  -  https://github.com/BestCoderDotInfo/RESTful-API-with-JWT-for-Rails-5-Example/blob/master/app/channels/room_channel.rb
+  - https://github.com/BestCoderDotInfo/RESTful-API-with-JWT-for-Rails-5-Example/blob/master/app/jobs/comment_broadcast_job.rb
+  - https://github.com/BestCoderDotInfo/RESTful-API-with-JWT-for-Rails-5-Example/blob/master/app/assets/javascripts/channels/room.coffee
+
 # Testing
+
+Go [live demo](https://minhquan-todo-app.herokuapp.com)
+
+# Testing with API :
 
 We using Postman:
 
