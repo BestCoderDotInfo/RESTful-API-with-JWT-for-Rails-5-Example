@@ -1,0 +1,9 @@
+<div id="comments">
+  <%= render @comments %>
+</div>
+
+<form>
+  <label>Say something:</label><br>
+  <input type="text" data-behavior="room_speaker">
+  <input type="hidden" value="<%= current_user.id %>" data-behavior="current_user">
+</form>
