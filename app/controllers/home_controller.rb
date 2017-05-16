@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @rooms = ChatRoom.all
+    @rooms = ChatRoom.where(room_type: 'public')
     @users = User.where(user_type: 'human').where.not(id: current_user.id)
   end
 

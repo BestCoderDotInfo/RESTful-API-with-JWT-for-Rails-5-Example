@@ -13,7 +13,7 @@ class ChatRoom < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :chat_room_members, dependent: :destroy
 
-  default_scope { where(room_type: 'public') }
+  # default_scope { where(room_type: 'public') }
 
   validates_uniqueness_of :name
 end
