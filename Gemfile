@@ -66,3 +66,5 @@ gem 'active_model_serializers'
 gem 'annotate'
 gem 'will_paginate', '~> 3.1.0'
 gem 'redis'
+gem "better_errors"
+gem "binding_of_caller"
