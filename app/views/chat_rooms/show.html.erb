@@ -1,0 +1,12 @@
+<%= render 'layouts/common' %>
+<h3><%= @room.name.titleize %></h3>
+<div id="comments-at-room<%= @room.id %>">
+  <%= render @comments %>
+</div>
+
+<form>
+  <label>Say something:</label><br>
+  <input type="text" data-behavior="room_speaker">
+  <input type="hidden" value="<%= current_user.id %>" data-behavior="current_user">
+  <input type="hidden" value="<%= @room.id %>" data-behavior="room_chat">
+</form>

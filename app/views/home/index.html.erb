@@ -1,9 +1,10 @@
-<div id="comments">
-  <%= render @comments %>
-</div>
+<%= render 'layouts/common' %>
+<h2>Chat rooms</h2>
+<% @rooms.each do |room| %>
+  <%= link_to room.name, chat_room_path(room) %><br />
+<% end %>
 
-<form>
-  <label>Say something:</label><br>
-  <input type="text" data-behavior="room_speaker">
-  <input type="hidden" value="<%= current_user.id %>" data-behavior="current_user">
-</form>
+<h2>Users</h2>
+<% @users.each do |user| %>
+  <%= link_to user.email, message_user_path(user) %><br />
+<% end %>
