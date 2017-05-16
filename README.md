@@ -1,24 +1,64 @@
-# README
+# Setup:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+`bundle install`
 
-Things you may want to cover:
+`rails db:create`
 
-* Ruby version
+`rails db:migrate`
 
-* System dependencies
+`rails db:seed`
 
-* Configuration
+# AactionCable Added:
+  -  https://github.com/BestCoderDotInfo/RESTful-API-with-JWT-for-Rails-5-Example/blob/master/app/channels/room_channel.rb
+  - https://github.com/BestCoderDotInfo/RESTful-API-with-JWT-for-Rails-5-Example/blob/master/app/jobs/comment_broadcast_job.rb
+  - https://github.com/BestCoderDotInfo/RESTful-API-with-JWT-for-Rails-5-Example/blob/master/app/assets/javascripts/channels/room.coffee
 
-* Database creation
+# Testing
 
-* Database initialization
+Go [live demo](https://minhquan-todo-app.herokuapp.com)
 
-* How to run the test suite
+# Testing with API :
 
-* Services (job queues, cache servers, search engines, etc.)
+We using Postman:
 
-* Deployment instructions
+1. We need login to get `auth_token` :
 
-* ...
+https://minhquan-todo-app.herokuapp.com/login 
+wiht params: 
+  - email: user2@email.com
+  - passwpord: 123123123
+  
+After login we have auth_token: 
+```
+{
+  "auth_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE0OTQ5MzE4ODV9.3fyWCrt4qhL59CiBGWJZEuZSIUGfXey5hY2rc0VEwcU"
+}
+```
+
+2. Using API to post comment:
+
+https://minhquan-todo-app.herokuapp.com/comments
+
+with params:
+
+  - comment[body] : Cotent of message
+ 
+Headers:
+  - Authorization: auth_token (eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE0OTQ5MzE4ODV9.3fyWCrt4qhL59CiBGWJZEuZSIUGfXey5hY2rc0VEwcU)
+  
+ 
+If it successfully, we have: 
+
+```
+{
+  "id": 8,
+  "body": "Send from live API",
+  "created_at": "2017-05-15T10:57:22.633Z",
+  "user": {
+    "id": 3,
+    "email": "user2@email.com",
+    "created_at": "2017-05-15T10:46:34.729Z",
+    "updated_at": "2017-05-15T10:46:34.729Z"
+  }
+}
+```
