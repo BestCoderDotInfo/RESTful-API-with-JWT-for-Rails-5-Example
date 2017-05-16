@@ -1,3 +1,17 @@
+# Real Time Chat Application using ActionCable
+
+>Introduce:
+
+  - Rails 5.0.2
+  - Postgres
+
+>Features:
+  
+  - Sign In/Sign Up/Sign Out
+  - Chat Room
+  - Chat together: A & B or B & A
+  - Send message to Chat Room via API
+  
 # Setup:
 
 `bundle install`
@@ -42,6 +56,7 @@ https://minhquan-todo-app.herokuapp.com/comments
 with params:
 
   - comment[body] : Cotent of message
+  - comment[chat_room_id] : ChatRoomID you want send message (1->5)
  
 Headers:
   - Authorization: auth_token (eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE0OTQ5MzE4ODV9.3fyWCrt4qhL59CiBGWJZEuZSIUGfXey5hY2rc0VEwcU)
