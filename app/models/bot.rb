@@ -23,12 +23,10 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
-class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-  has_many :posts, dependent: :destroy
-  has_many :comments, dependent: :destroy
-  has_many :chat_room_members, dependent: :destroy
+class Bot < User
+  default_scope { where(user_type: 'bot') }
+
+  def name
+    "BOT"
+  end
 end
