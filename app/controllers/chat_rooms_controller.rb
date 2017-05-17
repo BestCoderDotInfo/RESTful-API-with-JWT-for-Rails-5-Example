@@ -4,6 +4,7 @@ class ChatRoomsController < ApplicationController
 
   def show
     # @comments = @room.comments.limit(5)
+    @comments = Comment.where(chat_room_id: params[:id]).last(5)
   end
 
   private
