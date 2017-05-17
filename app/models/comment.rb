@@ -11,8 +11,7 @@
 #
 # Indexes
 #
-#  index_comments_on_chat_room_id  (chat_room_id)
-#  index_comments_on_user_id       (user_id)
+#  index_comments_on_user_id  (user_id)
 #
 
 class Comment < ApplicationRecord

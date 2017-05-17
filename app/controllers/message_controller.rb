@@ -21,8 +21,7 @@ class MessageController < ApplicationController
         @room.chat_room_members.create!(user: @user)
       end
     end
-    # @comments = @room.comments.limit(5)
-    @comments = Comment.where(chat_room_id: @room.id).last(5)
+    @comments = @room.comments.limit(5)
   end
 
   private
