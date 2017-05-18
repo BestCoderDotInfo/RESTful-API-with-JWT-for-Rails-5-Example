@@ -69,3 +69,6 @@ gem 'redis'
 gem "better_errors"
 gem "binding_of_caller"
 gem "foreman"
+gem 'twitter-bootstrap-rails'
+gem "font-awesome-rails"
+gem 'simple_form'
